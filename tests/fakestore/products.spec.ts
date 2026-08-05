@@ -1,10 +1,11 @@
-import { DataFactory } from '../data/factory';
-import { test, expect } from '../fixture/apiFixture';
+import { DataFactory } from '../../data/factory';
+import { test, expect } from '../../fixture/apiFixture';
 
 test.describe('Products API Tests', () => {
 
   test('Get Products info', async ({ productsAPI }) => {
     const response = await productsAPI.getAll();
+
     expect(response.ok).toBeTruthy();
     const responseBody = await response.json();
     expect(responseBody).toBeInstanceOf(Array);
@@ -12,7 +13,9 @@ test.describe('Products API Tests', () => {
 
   test('Get Product by ID', async ({ productsAPI }) => {
     const productId = 1;
+
     const response = await productsAPI.getById(productId);
+
     expect(response.ok).toBeTruthy();
     const responseBody = await response.json();
     expect(responseBody).toHaveProperty('id', productId);

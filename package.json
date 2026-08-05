@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test"
+    "test": "playwright test",
+    "test:fakestore": "playwright test --project=fakestore",
+    "test:stapi": "playwright test --project=stapi"
   },
   "keywords": [],
   "author": "",

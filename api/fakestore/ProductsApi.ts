@@ -1,5 +1,5 @@
 import { APIRequestContext, APIResponse } from "@playwright/test";
-import { BaseApi } from "./BaseApi";
+import { BaseApi } from "../BaseApi";
 
 export class ProductsApi extends BaseApi {
   private readonly endpoint = "products";

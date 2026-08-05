@@ -5,10 +5,25 @@ export default defineConfig({
   fullyParallel: true,
   reporter: 'list',
   use: {
-    baseURL: 'https://fakestoreapi.com',
     extraHTTPHeaders: {
       Accept: 'application/json'
     },
     trace: 'on-first-retry',
   },
+  projects: [
+    {
+      name: 'fakestore',
+      testDir: './tests/fakestore',
+      use: {
+        baseURL: 'https://fakestoreapi.com',
+      },
+    },
+    {
+      name: 'stapi',
+      testDir: './tests/stapi',
+      use: {
+        baseURL: 'https://stapi.co',
+      },
+    },
+  ],
 });
